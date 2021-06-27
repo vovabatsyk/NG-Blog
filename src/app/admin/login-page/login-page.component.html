@@ -1,27 +1,27 @@
 <form class="card" [formGroup]="form" (ngSubmit)="submit()">
-    <h2>Login to Admin panel</h2>
+  <h2>Login to Admin panel</h2>
 
-    <div [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}" class="form-control">
-        <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email">
-        <div *ngIf="form.get('email').touched && form.get('email').invalid" class="validation">
-            <small *ngIf="form.get('email').errors.required">Email is required</small>
-            <small *ngIf="form.get('email').errors.email">Enter correct email</small>
-        </div>
+  <div [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}" class="form-control">
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email">
+    <div *ngIf="form.get('email').touched && form.get('email').invalid" class="validation">
+      <small *ngIf="form.get('email').errors.required">Email is required</small>
+      <small *ngIf="form.get('email').errors.email">Enter correct email</small>
     </div>
+  </div>
 
-    <div class="form-control" [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}"
-        class="form-control">
-        <label for="password">Password</label>
-        <input id="password" type="password" formControlName="password">
-        <div *ngIf="form.get('password').touched && form.get('password').invalid" class="validation" class="validation">
-            <small *ngIf="form.get('password').errors.required">Password is required</small>
-            <small *ngIf="form.get('password').errors.minlength">Password must contain at least
-                {{form.get('password').errors.minlength.requiredLength}} characters, but now is
-                {{form.get('password').errors.minlength.actualLength}}
-                {{form.get('password').errors.minlength.actualLength > 1 ? "characters" : "character" }}</small>
-        </div>
+  <div class="form-control" [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}"
+    class="form-control">
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password">
+    <div *ngIf="form.get('password').touched && form.get('password').invalid" class="validation" class="validation">
+      <small *ngIf="form.get('password').errors.required">Password is required</small>
+      <small *ngIf="form.get('password').errors.minlength">Password must contain at least
+        {{form.get('password').errors.minlength.requiredLength}} characters, but now is
+        {{form.get('password').errors.minlength.actualLength}}
+        {{form.get('password').errors.minlength.actualLength > 1 ? "characters" : "character" }}</small>
     </div>
+  </div>
 
-    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Log In</button>
+  <button [disabled]="form.invalid || submitted" type="submit" class="btn btn-primary">Log In</button>
 </form>

@@ -11,5 +11,4 @@ export class PostPageComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
