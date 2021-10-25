@@ -2,11 +2,12 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
 :root {
-  --primary-color: #dc3545;
+  --primary-color: #a8535c;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --info-color: #3b84c0;
 }
 
 * {
@@ -143,8 +144,8 @@ img {
   padding: 0.7rem;
   margin: 1rem 0;
   opacity: 0.9;
-  background: var(--light-color);
-  color: #333;
+  background: var(--info-color);
+  color: var(--light-color);
 }
 
 .btn-primary,
